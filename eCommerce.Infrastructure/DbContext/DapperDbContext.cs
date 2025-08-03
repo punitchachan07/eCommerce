@@ -13,6 +13,9 @@ namespace eCommerce.Infrastructure.DbContext
             _connectionString = configuration.GetConnectionString("PostgresConnection") ?? string.Empty;
         }
 
+        // Dapper connection. 
+        // This method creates a new NpgsqlConnection using the connection string from the configuration.
+
         public IDbConnection CreateConnection()
         {
             return new NpgsqlConnection(_connectionString);
